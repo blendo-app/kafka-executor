@@ -1,0 +1,27 @@
+{
+  "name": "kafka-executor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "preinstall": "node -e \"if(!process.env.npm_execpath.includes('yarn')) throw 'You must use Yarn to install, not NPM'\"",
+    "test": "jest --coverage",
+    "build": "yarn clean && tsc",
+    "example": "node example",
+    "clean": "rm -rf build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^9.6.4",
+    "esnext": "^3.3.1",
+    "jest": "^22.4.3",
+    "ts-jest": "^22.4.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.1"
+  },
+  "dependencies": {
+    "node-rdkafka": "^2.3.1"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "noUnusedParameters": false,
+    "sourceMap": true,
+    "outDir": "build",
+    "baseUrl": ".",
+    "experimentalDecorators": true,
+    "lib": [
+      "esnext"
+    ],
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "types/*",
+        "ts-types/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
+
