@@ -108,10 +108,10 @@ new KafkaExecutor({
 | batchSize: number | no | 1 | How many messages to process concurrently, Change this according to your error tolerance |
 | errorHandler: ([error](#error),[kafkaMessage](#kafkamessage),commit:Function)=>void | no | yes | A function responsible for handling job errors. By Default the process will exit with code 1 |
 | logger: (message:string, type:'info'\|'warn'\|'error', [code](#codes))=>void | no | console | A function responsible for logging |
-| consumer: object | no | - | Options for the consumer see  [rdkafka configuration options]
+| consumer: object | no | - | Options for the consumer see  [rdkafka configuration options](https://github.com/edenhill/librdkafka/blob/0.11.1.x/CONFIGURATION.md) |
 | maxRetries: number  | no | 3 | Global configuration for all jobs  |
 | retryDelay: number  | no | 60000 ms | Global configuration for all jobs  |
-(https://github.com/edenhill/librdkafka/blob/0.11.1.x/CONFIGURATION.md) |
+
 
 
 #### Functions
