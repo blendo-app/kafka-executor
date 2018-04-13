@@ -1,7 +1,7 @@
 {
   "name": "kafka-executor",
   "version": "1.0.0",
-  "description": "",
+  "description": "Job executor for Kafka",
   "main": "build/index.js",
   "scripts": {
     "preinstall": "node -e \"if(!process.env.npm_execpath.includes('yarn')) throw 'You must use Yarn to install, not NPM'\"",
@@ -10,7 +10,7 @@
     "example": "node example",
     "clean": "rm -rf build"
   },
-  "author": "",
+  "author": "Mike Antoniadis <ssbeefeater@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^22.2.3",
