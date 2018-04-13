@@ -203,7 +203,7 @@ executor.shutdown()
 #### codes 
 
 | Name  | Description |
-| ------------- | ------------- | ------------- |
+| ------------- | ------------- |
 | kafkaError |  Log produced by kafka |
 | connectionError | Log produced when trying to connect to kafka |
 | jobFailed | Log produced by a job |
