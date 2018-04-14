@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
-    "noImplicitAny": true,
     "moduleResolution": "node",
+    "target": "es6",
+    "declare": true,
+    "noImplicitAny": true,
     "noUnusedParameters": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "outDir": "build",
     "baseUrl": ".",
     "experimentalDecorators": true,
@@ -24,4 +25,3 @@
     "src/**/*"
   ]
 }
-
