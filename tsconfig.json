@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "moduleResolution": "node",
     "target": "es6",
-    "declare": true,
     "noImplicitAny": true,
+    "declaration": true,
+    "moduleResolution": "node",
     "noUnusedParameters": false,
     "sourceMap": false,
     "outDir": "build",
