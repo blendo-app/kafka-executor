@@ -81,4 +81,3 @@ class Job {
     }
 }
 exports.default = Job;
-//# sourceMappingURL=Job.js.map
