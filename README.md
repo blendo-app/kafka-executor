@@ -102,8 +102,8 @@ new KafkaExecutor({
 | Name  | Required | Default  | Description |
 | ------------- | ------------- | ------------- | ------------- |
 | brokerList: string  | yes | - | Initial list of brokers as a CSV list of broker host or host:port  |
-| topics: [string]  | no | 60000 ms | The topics that the consumer will listen to|
-| groupId: string | no | true | Client group id string. All clients sharing the same group.id belong to the same group |
+| topics: [string]  | yes | - | The topics that the consumer will listen to|
+| groupId: string | yes | - | Client group id string. All clients sharing the same group.id belong to the same group |
 | checkInterval: number | no | 2000 | How match time to wait until check for new messages in case of dead period |
 | batchSize: number | no | 1 | How many messages to process concurrently, Change this according to your error tolerance |
 | errorHandler: ([error](#error),[kafkaMessage](#kafkamessage),commit:Function)=>void | no | yes | A function responsible for handling job errors. By Default the process will exit with code 1 |
