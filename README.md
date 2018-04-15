@@ -197,8 +197,8 @@ executor.shutdown()
 ```
 | Name | type | Description |
 | ------------- | ------------- | ------------- |
-| jobId | string | the failed job |
-| status | the http status if exists | the failed job |
+| jobId  | the failed job |
+| status | the http status if exists |
 
 #### codes 
 
