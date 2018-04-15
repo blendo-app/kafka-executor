@@ -135,8 +135,8 @@ executor.shutdown()
 
 | Name  |  Description |
 | ------------- | ------------- |
-| init: (jobId:string)=>Promise) | Adds a job in the processing flow. |
-| addJob: (jobId:string, new [Job](#job)(...))=>void) | Initialize the kafka-executor and connect consumer with the kafka. |
+| init: (jobId:string)=>Promise) | Initialize the kafka-executor and connect consumer with the kafka. |
+| addJob: (jobId:string, new [Job](#job)(...))=>void) | Adds a job in the processing flow. |
 | removeJob: (jobId:string)=>void) | removes a job. |
 | on: (jobId:string)=>void) | Listens in a variant of [events](#events) handled by kafka-executor and rdkafka |
 | shutdown: (jobId:string)=>Promise) | shutdown the process gracefully ensuring that the pending jobs will finish before exit |
