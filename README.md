@@ -1,7 +1,8 @@
 # kafka-executor
 
 
-Listens to topics and executes asynchronous jobs, ensuring that all will be done before a message will be committed.
+Listens to topics and executes asynchronous functions able to process each kafka message,
+ensuring that any processing will succeed, before the corresponding message offset is committed.
 
 ---
 
@@ -17,7 +18,7 @@ Listens to topics and executes asynchronous jobs, ensuring that all will be done
 
 * Simple API
 * Ensures that all the jobs will be executed successfully before a message will be committed
-* Retry strategy for jobs that fails
+* Retry strategy for jobs that fail
 * Graceful shutdown
 
 
