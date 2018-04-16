@@ -1,5 +1,8 @@
 # kafka-executor
 
+
+Listens to topics and executes asynchronous jobs, ensuring that all will be done before a message will be committed.
+
 ---
 
 [Installation](#installation)
@@ -13,7 +16,7 @@
 #### Features
 
 * Simple API
-* Ensures that all the jobs will be executed successfully before a message is committed
+* Ensures that all the jobs will be executed successfully before a message will be committed
 * Retry strategy for jobs that fails
 * Graceful shutdown
 
