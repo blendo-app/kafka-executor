@@ -110,7 +110,7 @@ class KafkaExecutor {
         } catch (error) {
             this.options.logger(error, 'error', 'jobFailed');
             this.eventEmitter.emit(KafkaExecutor.events.processingError, message, error);
-            this.options.errorHandler(<ErrorResponse>error , message, this.consumer.commitMessageSync);
+            this.options.errorHandler(<ErrorResponse>error , message, this.commit.bind(this));
         }
     }
 
