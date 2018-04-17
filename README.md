@@ -94,7 +94,7 @@ new KafkaExecutor({
     topics: string[];
     checkInterval?: number;
     batchSize?: number;
-    errorHandler?: (err: Error, message:KafkaMessage,commit:Function) => void;
+    errorHandler?: (err: Error[], message:KafkaMessage,commit:Function) => void;
     logger?: (message: string, type: LogType, code?: string) => void;
     maxRetries?: number;
     retryDelay?: number;

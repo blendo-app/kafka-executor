@@ -16,7 +16,7 @@ export type Logger = (message: string, type: LogType, code?: string) => void;
 type RetryFunction = (retryNumber: number) => number;
 
 type ShouldRetry = (err: Error) => boolean;
-type ErrorHandler = (err: ErrorResponse, message: KafkaMessage, commit: Function) => void;
+type ErrorHandler = (err: ErrorResponse[], message: KafkaMessage, commit: Function) => void;
 
 export interface JobOptions {
     maxRetries?: number;

@@ -110,7 +110,7 @@ class KafkaExecutor {
         } catch (error) {
             this.options.logger(error, 'error', 'jobFailed');
             this.eventEmitter.emit(KafkaExecutor.events.processingError, message, error);
-            this.options.errorHandler(<ErrorResponse>error , message, this.commit.bind(this));
+            this.options.errorHandler(<ErrorResponse[]>error, message, this.commit.bind(this));
         }
     }
 
@@ -126,7 +126,7 @@ class KafkaExecutor {
                 .catch((err: any) => ({ status: 'failed', content: { ...err, jobId: jobItem.id } })))
         );
         if (results.some((res: any) => res.status === 'failed')) {
-            throw results.filter((res: any) => res.status === 'failed');
+            throw results.filter((res: any) => res.status === 'failed').map((err) => err.content);
         }
     }
 
