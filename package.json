@@ -6,6 +6,7 @@
   "types": "build/index.d.ts",
   "scripts": {
     "preinstall": "node -e \"if(!process.env.npm_execpath.includes('yarn')) throw 'You must use Yarn to install, not NPM'\"",
+    "prepublish": "yarn build",
     "test": "jest --coverage",
     "build": "yarn clean && tsc",
     "example": "node example",
