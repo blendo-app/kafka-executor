@@ -158,19 +158,19 @@ class KafkaExecutor {
         return this.consumer.on(type, cl);
     }
 
-    public getOffset= async ()=> {
-        const { topics,consumer } = this.options;
-        const allOffsets:any = {};
-        for(let i=0; i < topics.length; i++){
+    public getOffset = async () => {
+        const { topics, consumer } = this.options;
+        const allOffsets: any = {};
+        for (let i = 0; i < topics.length; i++) {
             const topic = topics[i];
-            allOffsets[topic]= await new Promise((res,rej)=>this.consumer.queryWatermarkOffsets(topic, consumer.partition || null, 1000, function(err, offsets) {
-                if(err){
-                   return rej(err);
+            allOffsets[topic] = await new Promise((res, rej) => this.consumer.queryWatermarkOffsets(topic, consumer.partition || null, 1000, function (err, offsets) {
+                if (err) {
+                    return rej(err);
                 }
-                res(offsets)
+                res(offsets);
             }));
         }
-       return allOffsets;
+        return allOffsets;
     }
 
     private cancelJobs() {
