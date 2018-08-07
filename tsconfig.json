@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "amd",
     "target": "es6",
     "noImplicitAny": true,
     "declaration": true,
@@ -8,6 +8,7 @@
     "noUnusedParameters": false,
     "sourceMap": false,
     "outDir": "build",
+    "outFile": "build/index.js",
     "baseUrl": ".",
     "experimentalDecorators": true,
     "lib": [

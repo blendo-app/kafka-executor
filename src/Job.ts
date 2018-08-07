@@ -1,4 +1,4 @@
-import { JobOptions, LogType } from '../index.d';
+import { JobOptions, LogType } from './types';
 
 class Job {
     private canceled: boolean = false;

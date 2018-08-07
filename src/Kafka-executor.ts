@@ -1,7 +1,6 @@
-import { JobItem, ErrorResponse } from './../index.d';
 import { KafkaConsumer } from 'node-rdkafka';
 import { EventEmitter } from 'events';
-import { AnyObject, KafkaExecutorOptions, LogType, KafkaMessage, JobOptions, Logger } from '../index.d';
+import { AnyObject, KafkaExecutorOptions, JobItem, ErrorResponse, LogType, KafkaMessage, JobOptions, Logger } from './types';
 import Job from './Job';
 
 class KafkaExecutor {
@@ -157,6 +156,21 @@ class KafkaExecutor {
             return this.eventEmitter.on(type, cl);
         }
         return this.consumer.on(type, cl);
+    }
+
+    public getOffset= async ()=> {
+        const { topics,consumer } = this.options;
+        const allOffsets:any = {};
+        for(let i=0; i < topics.length; i++){
+            const topic = topics[i];
+            allOffsets[topic]= await new Promise((res,rej)=>this.consumer.queryWatermarkOffsets(topic, consumer.partition || null, 1000, function(err, offsets) {
+                if(err){
+                   return rej(err);
+                }
+                res(offsets)
+            }));
+        }
+       return allOffsets;
     }
 
     private cancelJobs() {

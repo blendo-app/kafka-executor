@@ -1,27 +1,27 @@
-import { Job } from "./src";
+import Job from './Job';
 
 export interface AnyObject {
     [index: string]: any;
 }
 
 export interface JobItem {
-    id: string,
-    job: Job,
+    id: string;
+    job: Job;
 }
 
 export type LogType = 'warn' | 'info' | 'error';
 
 export type Logger = (message: string, type: LogType, code?: string) => void;
 
-type RetryFunction = (retryNumber: number) => number;
+export type RetryFunction = (retryNumber: number) => number;
 
-type ShouldRetry = (err: Error) => boolean;
-type ErrorHandler = (err: ErrorResponse[], message: KafkaMessage, commit: Function) => void;
+export type ShouldRetry = (err: Error) => boolean;
+export type ErrorHandler = (err: ErrorResponse[], message: KafkaMessage, commit: Function) => void;
 
 export interface JobOptions {
     maxRetries?: number;
     retryDelay?: number | RetryFunction;
-    shouldRetry?: ShouldRetry | boolean
+    shouldRetry?: ShouldRetry | boolean;
     logger?: Logger;
 }
 
