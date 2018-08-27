@@ -12,7 +12,6 @@ class KafkaExecutor {
     };
     private readonly eventEmitter: EventEmitter = new EventEmitter();
     private consumer: KafkaConsumer;
-    private interval: number | null;
     private resolver: Function;
     private options: KafkaExecutorOptions = {
         topics: [],
@@ -31,7 +30,6 @@ class KafkaExecutor {
         }
     };
 
-    private logger: Logger;
     private status: 'on' | 'off' = 'off';
     private jobs: JobItem[] = [];
     constructor(options: KafkaExecutorOptions) {
@@ -49,6 +47,7 @@ class KafkaExecutor {
         }, {});
         this.on('event.error', (err) => {
             this.options.logger(err, 'error', 'kafkaError');
+            this.options.errorHandler(<ErrorResponse[]>{ ...err, status: 1 }, null, null);
         });
     }
 

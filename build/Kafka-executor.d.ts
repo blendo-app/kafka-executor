@@ -7,10 +7,8 @@ declare class KafkaExecutor {
     private static readonly events;
     private readonly eventEmitter;
     private consumer;
-    private interval;
     private resolver;
     private options;
-    private logger;
     private status;
     private jobs;
     constructor(options: KafkaExecutorOptions);
