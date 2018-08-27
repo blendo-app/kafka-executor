@@ -100,7 +100,6 @@ class KafkaExecutor {
         this.consumer = new node_rdkafka_1.KafkaConsumer(Object.assign({}, consumer, { 'metadata.broker.list': brokerList, 'group.id': groupId, 'enable.auto.commit': false }), {});
         this.on('event.error', (err) => {
             this.options.logger(err, 'error', 'kafkaError');
-            this.options.errorHandler(Object.assign({}, err, { status: 1 }), null, null);
         });
     }
     setOptions(options) {
