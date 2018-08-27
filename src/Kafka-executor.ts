@@ -47,7 +47,6 @@ class KafkaExecutor {
         }, {});
         this.on('event.error', (err) => {
             this.options.logger(err, 'error', 'kafkaError');
-            this.options.errorHandler(<ErrorResponse[]>{ ...err, status: 1 }, null, null);
         });
     }
 
