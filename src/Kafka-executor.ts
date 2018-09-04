@@ -22,6 +22,7 @@ class KafkaExecutor {
         batchSize: 1,
         maxRetries: 3,
         retryDelay: 60000,
+        connectionTimeout:5000,
         logger: (message: string, type: LogType) => {
             console[type](message);
         },
@@ -67,7 +68,7 @@ class KafkaExecutor {
             this.checkForMessages();
             resolve();
         });
-        this.consumer.connect({ timeout: 5000 }, handleConnectError);
+        this.consumer.connect({ timeout: this.options.connectionTimeout }, handleConnectError);
         return this;
     })
 
