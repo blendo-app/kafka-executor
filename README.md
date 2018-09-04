@@ -92,6 +92,7 @@ new KafkaExecutor({
     brokerList: string;
     groupId: string;
     topics: string[];
+    connectionTimeout: string[];
     checkInterval?: number;
     batchSize?: number;
     errorHandler?: (err: Error[], message:KafkaMessage,commit:Function) => void;
