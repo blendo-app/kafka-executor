@@ -23,7 +23,7 @@ declare class KafkaExecutor {
     addJob: (jobId: string, job: Job) => void;
     removeJob: (jobId: string) => void;
     private consumerOnReady();
-    on(type: string, cl: (...args: any[]) => void): EventEmitter | KafkaConsumer;
+    on(type: any, cl: (...args: any[]) => void): EventEmitter | KafkaConsumer;
     getOffset: (partition?: number) => Promise<any>;
     private cancelJobs();
     shutdown: () => Promise<void | {}>;

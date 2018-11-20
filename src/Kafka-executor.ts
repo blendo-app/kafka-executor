@@ -22,7 +22,7 @@ class KafkaExecutor {
         batchSize: 1,
         maxRetries: 3,
         retryDelay: 60000,
-        connectionTimeout:5000,
+        connectionTimeout: 5000,
         logger: (message: string, type: LogType) => {
             console[type](message);
         },
@@ -150,7 +150,7 @@ class KafkaExecutor {
         this.consumer.subscribe(topics);
     }
 
-    public on(type: string, cl: (...args: any[]) => void) {
+    public on(type: any, cl: (...args: any[]) => void) {
         if (Object.values(KafkaExecutor.events).includes(type)) {
             return this.eventEmitter.on(type, cl);
         }

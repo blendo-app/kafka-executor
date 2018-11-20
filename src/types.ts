@@ -30,7 +30,7 @@ export interface KafkaExecutorOptions extends JobOptions {
     brokerList: string;
     groupId: string;
     checkInterval?: number;
-    connectionTimeout: number;
+    connectionTimeout?: number;
     batchSize?: number;
     logger?: Logger;
     errorHandler?: ErrorHandler;

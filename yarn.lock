@@ -2375,9 +2375,10 @@ node-pre-gyp@^0.6.39:
     tar "^2.2.1"
     tar-pack "^3.4.0"
 
-node-rdkafka@^2.3.4:
-  version "2.3.4"
-  resolved "https://registry.npmjs.org/node-rdkafka/-/node-rdkafka-2.3.4.tgz#e940c0edb3ed43725bab84fd25257c88204cb91e"
+node-rdkafka@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.npmjs.org/node-rdkafka/-/node-rdkafka-2.4.2.tgz#90228f8fb1e1087555bea830699fd52faa7c9a4d"
+  integrity sha512-sOfVLlLUChJZqmJV5lTdL/psAg4TvkDnSprly6UQenCK8W69ee7Q20v8nzFESsdZWTRgpNHu3WEmz9I+Ef6Bog==
   dependencies:
     bindings "1.x"
     nan "2.x"
