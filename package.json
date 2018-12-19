@@ -1,6 +1,6 @@
 {
   "name": "kafka-executor",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Job executor for Kafka",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -28,6 +28,6 @@
     "typescript": "^2.8.1"
   },
   "dependencies": {
-    "node-rdkafka": "^2.4.2"
+    "node-rdkafka": "^2.5.1"
   }
 }

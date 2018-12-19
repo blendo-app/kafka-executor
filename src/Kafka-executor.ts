@@ -59,7 +59,7 @@ class KafkaExecutor {
         const handleConnectError = (err: any) => {
             if (err) {
                 this.options.logger(err, 'error', 'connectionError');
-                reject();
+                reject(err);
             }
         };
         this.on('ready', () => {
